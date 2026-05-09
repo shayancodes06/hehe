@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap');
+
+body, html {
+    margin: 0; padding: 0;
+    height: 100vh; width: 100vw;
+    font-family: 'Fredoka', sans-serif;
+    color: #b71c1c; /* Deep red color */
+    overflow: hidden; 
+}
+
+.heart-background-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* THE MAIN BACKGROUND (Small Hearts) */
+    background-image: url('bg_main.jpeg');
+    background-size: 350px; 
+    background-repeat: repeat;
+    transition: background-image 1s ease-in-out; 
+}
+
+.content-box-design {
+    background: rgba(255, 255, 255, 0.95); 
+    width: 90%;
+    max-width: 500px; 
+    height: 90%;
+    max-height: 700px;
+    border-radius: 25px; 
+    position: relative; 
+    overflow: hidden; 
+    
+    /* Deep red shadow to match the hearts */
+    box-shadow: 0 10px 40px rgba(183, 28, 28, 0.2); 
+    transition: all 0.8s ease;
+}
+
+.screen {
+    width: 100%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease;
+    text-align: center;
+    padding: 30px; 
+    box-sizing: border-box;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* TEXT STYLING */
+h1, h2 {
+    color: #b71c1c; 
+    font-size: 1.8rem; 
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.bday-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    color: #b71c1c; 
+    margin-bottom: 10px;
+}
+
+.photo {
+    width: 220px; 
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 15px 0;
+}
+
+/* BUTTON STYLING */
+.btn {
+    background: #b71c1c; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    box-shadow: 0 4px 10px rgba(183, 28, 28, 0.3);
+    transition: transform 0.2s;
+    margin-top: 15px;
+}
+
+.btn:hover { transform: scale(1.05); }
+
+.load-text {
+    font-size: 1.2rem;
+    color: #b71c1c; 
+    margin: 8px 0;
+    font-weight: 500;
+    transition: opacity 0.5s ease;
+}
+.hidden-text { opacity: 0; }
+
+.balloon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.balloon {
+    font-size: 3.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.balloon:hover { transform: scale(1.2); }
+
+.pop-anim {
+    animation: popEffect 0.3s forwards;
+    pointer-events: none;
+}
+
+@keyframes popEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-12px); }
+}
+
+#memory-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(255, 255, 255, 0.9); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; 
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 90%;
+    width: 320px; 
+    box-shadow: 0 10px 30px rgba(183, 28, 28, 0.15);
+}
+
+#memory-text {
+    font-size: 1.2rem;
+    color: #b71c1c; 
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+/* Final Screen transparent so the big pink hearts show */
+.final-screen { background-color: transparent; } 
+.final-photo { width: 260px; height: 260px; }
+.final-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #b71c1c; 
+    line-height: 1.3;
+    margin-top: 15px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Helps text stand out against busy background */
+}

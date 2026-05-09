@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday Mommy 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+.page{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    top:0;
+    left:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+    animation:fade 1s ease;
+}
+
+.active{
+    display:flex;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:scale(1.03);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.bg-main{
+    background:url('/mnt/data/bg_main.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+.bg-final{
+    background:url('/mnt/data/bg_final.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(1px);
+}
+
+.content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+}
+
+h1{
+    font-size:3rem;
+    color:#b21e4b;
+    font-family:'Dancing Script',cursive;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.2rem;
+    color:#5a1a32;
+    line-height:1.8;
+}
+
+.btn{
+    margin-top:35px;
+    padding:14px 35px;
+    border:none;
+    border-radius:40px;
+    background:#c92c5f;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.photo{
+    width:220px;
+    height:220px;
+    border-radius:25px;
+    object-fit:cover;
+    margin:20px auto;
+    border:5px solid white;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.small-photo{
+    width:250px;
+    height:250px;
+}
+
+.memory-lines{
+    margin-top:15px;
+    font-size:1.1rem;
+    color:#6e1c3c;
+}
+
+.balloon-container{
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.balloon{
+    position:absolute;
+    width:100px;
+    cursor:pointer;
+    transition:0.4s;
+    animation:float 3s ease-in-out infinite;
+}
+
+.balloon:hover{
+    transform:scale(1.1);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.pop{
+    animation:pop 0.5s forwards;
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:scale(2);
+        opacity:0;
+    }
+}
+
+.popup{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:420px;
+    background:white;
+    border-radius:30px;
+    padding:25px;
+    display:none;
+    animation:fade 0.5s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:15px;
+}
+
+.popup h2{
+    color:#c92c5f;
+    margin-bottom:10px;
+}
+
+.popup p{
+    font-size:1.1rem;
+}
+
+.close-btn{
+    margin-top:18px;
+    padding:10px 24px;
+    border:none;
+    border-radius:30px;
+    background:#c92c5f;
+    color:white;
+    cursor:pointer;
+}
+
+.final-text{
+    background:rgba(255,255,255,0.7);
+    padding:25px;
+    border-radius:30px;
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:2.2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .photo{
+        width:180px;
+        height:180px;
+    }
+
+    .balloon{
+        width:80px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="page bg-main active" id="page1">
+    <div class="overlay"></div>
+    <div class="content">
+        <p style="font-size:1.3rem; margin-bottom:10px; color:#8f1f44;">
+            “A surprise made for youu by samuuu” 🌺
+        </p>
+
+        <img src="mom_solo.jpeg" class="photo" alt="her pic">
+h
+        <h1>happy birthdayyy mommmyy! 💖</h1>
+
+        <div class="memory-lines">
+            <p>Loading memories...</p>
+            <p>Loading love...</p>
+            <p>Loading chaos...</p>
+            <p>Loading best mom...</p>
+        </div>
+
+        <<img src="us_pic.jpeg" class="photo small-photo" alt="us pic">
+        <button class="btn" onclick="nextPage()">Tap to continuee 🌸</button>
+    </div>
+</div>
+
+<div class="page bg-main" id="page2">
+    <div class="overlay"></div>
+
+    <div class="content" style="position:absolute; top:30px; width:100%; text-align:center; z-index:3;">
+        <h1 style="font-size:2.3rem;">Click anything to discover surprises 💖</h1>
+    </div>
+
+    <div class="balloon-container">
+        <img src="pic1.jpeg" class="balloon" style="top:18%; left:10%;" onclick="openPopup(0,this)">
+
+        <img src="pic2.jpeg" class="balloon" style="top:30%; right:15%;" onclick="openPopup(1,this)">
+
+        <img src="pic3.jpeg" class="balloon" style="bottom:28%; left:18%;" onclick="openPopup(2,this)">
+
+        <img src="pic4.jpeg" class="balloon" style="bottom:20%; right:20%;" onclick="openPopup(3,this)">
+
+        <img src="pic5.jpeg"class="balloon" style="top:50%; left:42%;" onclick="openPopup(4,this)">
+    </div>
+
+    <div class="popup" id="popupBox">
+        <img id="popupImg" src="">
+        <h2 id="popupTitle"></h2>
+        <p id="popupText"></p>
+        <button class="close-btn" onclick="closePopup()">Continue 💌</button>
+    </div>
+</div>
+
+<div class="page bg-final" id="page3">
+    <div class="overlay"></div>
+
+    <div class="content final-text">
+        <img src="fav_pic.jpeg" class="photo" style="width:260px;height:260px;">
+
+        <h1>Thank you 💗</h1>
+
+        <p>
+            Thank you for being<br>
+            my safe place,<br>
+            my comfort person,<br>
+            and the best mommy ever 💗
+        </p>
+    </div>
+</div>
+
+<script>
+let currentPage = 1;
+let opened = 0;
+
+const surprises = [
+{
+    title:"Surprise 1 💖",
+    text:"Prettiest women i know...🤭💗",
+    img:"https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=687&auto=format&fit=crop"
+},
+{
+    title:"Surprise 2 🌺",
+    text:"love being by ur sidee...🌺🥹",
+    img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=687&auto=format&fit=crop"
+},
+{
+    title:"Surprise 3 💌",
+    text:"such a cutie, thanks for supporting me 💌",
+    img:"https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=687&auto=format&fit=crop"
+},
+{
+    title:"Surprise 4 🫶🏻",
+    text:"best memory: our lil night walk + yap sessions 🫶🏻",
+    img:"https://images.unsplash.com/photo-1516589091380-5d8e87df6999?q=80&w=687&auto=format&fit=crop"
+},
+{
+    title:"Final Surprise 😽",
+    text:"love u bohot saaaraaaa 😽😽😽😽",
+    img:"https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=687&auto=format&fit=crop"
+}
+];
+
+function nextPage(){
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+}
+
+function openPopup(index, balloon){
+    balloon.classList.add('pop');
+
+    setTimeout(()=>{
+        balloon.style.display='none';
+    },450);
+
+    document.getElementById('popupImg').src = surprises[index].img;
+    document.getElementById('popupTitle').innerText = surprises[index].title;
+    document.getElementById('popupText').innerText = surprises[index].text;
+    document.getElementById('popupBox').style.display='block';
+
+    opened++;
+}
+
+function closePopup(){
+    document.getElementById('popupBox').style.display='none';
+
+    if(opened >= 5){
+        setTimeout(()=>{
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page3').classList.add('active');
+        },300);
+    }
+}
+</script>
+
+</body>
+</html>
